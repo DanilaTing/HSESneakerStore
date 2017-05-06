@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class="image">
+  <%= image_tag @sneaker.image %>
+</div>
+
+<p class="brandCaption">
+  <strong>Brand:</strong>
+  <%#= Brand.find(@sneaker.brand_id).name %>
+  <%= link_to Brand.find(@sneaker.brand_id).name, Brand.find(@sneaker.brand_id) %>
+  <%= image_tag Brand.find(@sneaker.brand_id).logo %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @sneaker.model %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @sneaker.sex %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sneaker.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_sneaker_path(@sneaker) %> |
+<%= link_to 'Back', sneakers_path %>
