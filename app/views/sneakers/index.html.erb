@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sneakers</h1>
+<!-- <h1>Sneakers</h1> -->
 
-<table>
-  <thead>
+<!-- <table> -->
+  <!-- <thead>
     <tr>
       <th>Brand</th>
       <th>Model</th>
@@ -12,23 +12,43 @@
       <th>Image</th>
       <th colspan="3"></th>
     </tr>
-  </thead>
+  </thead> -->
 
-  <tbody>
+  <!-- <tbody>
     <% @sneakers.each do |sneaker| %>
       <tr>
-        <td><%= sneaker.brand_id %></td>
+        <td><%= Brand.find(sneaker.brand_id).name %></td>
         <td><%= sneaker.model %></td>
         <td><%= sneaker.sex %></td>
         <td><%= sneaker.price %></td>
-        <td><%= link_to 'Show', sneaker %></td>
+        <td><%= image_tag sneaker.image %></td> -->
+        <!-- <td><%= link_to 'Show', sneaker %></td>
         <td><%= link_to 'Edit', edit_sneaker_path(sneaker) %></td>
-        <td><%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      <!-- </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br> -->
 
-<%= link_to 'New Sneaker', new_sneaker_path %>
+<section>
+  <% @sneakers.each do |sneaker| %>
+    <div class="main">
+      <p><%= Brand.find(sneaker.brand_id).name %></p>
+      <p><%= sneaker.model %></p>
+      <div class="image"> <%= image_tag sneaker.image %> </div>
+      <figure></figure>
+      <p><%= sneaker.price %></p>
+      <p><%= sneaker.sex %></p>
+      <%= link_to '', sneaker %>
+    </div>
+  <% end %>
+</section>
+
+<div class="buttonMenu">
+  <%= link_to 'Back', 'welcome.html' %>
+  <%= link_to 'New Sneaker', new_sneaker_path %>
+</div>
+
+<div class="newSneaker"><%= link_to 'New Sneaker', new_sneaker_path %></div>

@@ -1,23 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p class="name">
-  <!-- <strong>Name:</strong> -->
-  <%= @brand.name %>
-</p>
+<section class="brandsShow">
+  <p class="name">
+    <!-- <strong>Name:</strong> -->
+    <%= @brand.name %>
+  </p>
 
-<div class="logo">
-  <%= image_tag @brand.logo %>
-</div>
+  <div class="logo">
+    <%= image_tag @brand.logo %>
+  </div>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+  <div class="edit">
+    <%= link_to 'Edit', edit_brand_path(@brand) %>
+    <%= link_to 'Back', brands_path %>
+  </div>
 
-<hr>
+  <%#= render 'sneakers/index' %>
+  <section class="sneakersInBrand">
+    <% @sneakers.each do |sneaker| %>
+      <%= render 'sneakers/show', sneaker: sneaker %>
+    <% end %>
+  </section>
 
-<%#= render 'sneakers/index' %>
-
-<% @sneakers.each do |sneaker| %>
-  <%= render 'sneakers/show', sneaker: sneaker %>
-<% end %>
-
-<%= render 'sneakers/form', sneaker: Sneaker.new %>
+  <buttons class="newSneakerInBrand">
+    <%= link_to 'New Sneaker', new_sneaker_path %>
+  </buttons>
+</section>

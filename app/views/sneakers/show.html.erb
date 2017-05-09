@@ -1,31 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<div class="image">
-  <%= image_tag @sneaker.image %>
-</div>
+<section class="sneakerShow">
+  <div class="model">
+    <h2>
+      <%= @sneaker.model %>
+    </h2>
 
-<p class="brandCaption">
-  <strong>Brand:</strong>
-  <%#= Brand.find(@sneaker.brand_id).name %>
-  <%= link_to Brand.find(@sneaker.brand_id).name, Brand.find(@sneaker.brand_id) %>
-  <%= image_tag Brand.find(@sneaker.brand_id).logo %>
-</p>
+    <div class="image">
+      <%= image_tag @sneaker.image %>
+    </div>
+  </div>
 
-<p>
-  <strong>Model:</strong>
-  <%= @sneaker.model %>
-</p>
+  <ul>
+    <li><%= @sneaker.sex %></li>
+    <li><%= @sneaker.price %> rur.</li>
+    <li>
+      <buttons>
+        <%= link_to 'Edit', edit_sneaker_path(@sneaker) %>
+        <%= link_to 'Destroy', @sneaker, method: :delete, data: { confirm: 'HELL NOOOOOOOOOOOOOO' } %>
+      </buttons>
+    </li>
+  </ul>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @sneaker.sex %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @sneaker.price %>
-</p>
-
-
-<%= link_to 'Edit', edit_sneaker_path(@sneaker) %> |
-<%= link_to 'Back', sneakers_path %>
+  <div class="button">
+    <%= link_to 'Back', sneakers_path %>
+  </div>
+</section>

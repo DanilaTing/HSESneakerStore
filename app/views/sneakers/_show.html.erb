@@ -1,25 +1,22 @@
-<h2>
-  <%= link_to sneaker.model, sneaker %>
-</h2>
+<section class="sneakersPartial">
+  <div class="model">
+    <h2>
+      <%= link_to sneaker.model, sneaker %>
+    </h2>
 
-<div class="image">
-  <%= image_tag sneaker.image %>
-</div>
+    <div class="image">
+      <%= image_tag sneaker.image %>
+    </div>
+  </div>
 
-<p>
-  <strong>Sex:</strong>
-  <%= sneaker.sex %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= sneaker.price %>
-</p>
-
-<hr>
-
-
-<%= link_to 'Edit', edit_sneaker_path(sneaker) %>
-<%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<hr>
+  <ul>
+    <li><%= sneaker.sex %></li>
+    <li><%= sneaker.price %> rur.</li>
+    <li>
+      <buttons>
+        <%= link_to 'Edit', edit_sneaker_path(sneaker) %>
+        <%= link_to 'Destroy', sneaker, method: :delete, data: { confirm: 'HELL NOOOOOOOOOOOOOO' } %>
+      </buttons>
+    </li>
+  </ul>
+</section>

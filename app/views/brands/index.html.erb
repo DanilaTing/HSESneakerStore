@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Brands</h1>
+<!-- <h1>Brands</h1>
 
 <table>
   <thead>
@@ -22,6 +22,20 @@
   </tbody>
 </table>
 
-<br>
+<br> -->
 
-<%= link_to 'New Brand', new_brand_path %>
+<section class="brands">
+  <% @brands.each do |brand| %>
+    <div class="mainBrands">
+      <p><%= brand.name %></p>
+      <%= link_to '', brand %>
+    </div>
+  <% end %>
+</section>
+
+<div class="buttonMenu">
+  <%= link_to 'Back', 'welcome.html' %>
+  <%= link_to 'New Brand', new_brand_path %>
+</div>
+
+<div class="newBrand"> <%= link_to 'New Brand', new_brand_path %> </div>

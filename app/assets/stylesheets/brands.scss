@@ -2,14 +2,100 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.name {
-  display: inline-block;
-  font-family: 'Helvetica';
-  font-size: 100px;
-  font-weight: bold;
+.brands {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .mainBrands {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: rgba(255, 182, 137, 1);
+    }
+
+    &:hover p {
+      color: white;
+    }
+
+    p {
+      font-family: 'Helvetica neue', sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: center;
+      color: black;
+    }
+
+    a {
+      width: 100vw;
+      height: 20vh;
+      position: absolute;
+      opacity: 0;
+    }
+  }
 }
 
+.newBrand {
+  display: none;
+}
 
-.logo img {
-  display: inline-block;
+.brandsShow {
+  width: 100vw;
+  font-family: 'Helvetica neue', sans-serif;
+  display: block;
+
+  .name {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px 0 0 100px;
+    position: absolute;
+  }
+
+  .edit {
+    padding-top: 30px;
+    margin-left: 300px;
+
+    a{
+      text-decoration: none;
+      color: black;
+      border: 1px solid black;
+      padding: 5px;
+      &:hover {
+        background-color: white !important;
+        opacity: .6;
+      }
+    }
+  }
+
+  .newSneakerInBrand {
+    position: absolute;
+    margin-top: -15px;
+    margin-left: 90%;
+
+    a{
+      text-decoration: none;
+      color: black;
+      border: 1px solid black;
+      padding: 5px;
+      &:hover {
+        background-color: white !important;
+        opacity: .6;
+      }
+    }
+  }
+
+  .sneakersInBrand {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+  }
 }

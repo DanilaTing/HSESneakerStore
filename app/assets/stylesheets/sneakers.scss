@@ -2,12 +2,239 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.image img {
-  width: 500px;
-  height: 500px;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
-.brandCaption img {
-  width: 100px;
-  height: 70px;
+
+
+
+nav {
+  display: none;
+}
+
+.buttonMenu {
+	font-family: 'Helvetica neue', sans-serif;
+	position: absolute;
+	margin-top: -95vh;
+	margin-left: 5vw;
+
+	a {
+		text-decoration: none;
+		color: black;
+		border: 1px solid black;
+		padding: 5px;
+		&:hover {
+			background-color: white !important;
+			opacity: .6;
+		}
+	}
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+	flex-wrap: wrap;
+  justify-content: flex-start;
+
+  .main {
+    width: 20vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: rgba(0, 56, 255, .8);
+    }
+
+    img {
+      width: 190px;
+      height: 190px;
+      mix-blend-mode: multiply;
+    }
+
+    p {
+      font-family: 'Helvetica neue', sans-serif;
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 40px;
+      text-align: center;
+      color: white;
+      width: 220px;
+    }
+
+    a {
+      width: 20vw;
+      height: 100vh;
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
+
+.newSneaker {
+  display: none;
+}
+
+.sneakersPartial {
+  font-family: 'Helvetica neue', sans-serif;
+  width: 30vw;
+  height: 50vh;
+  align-items: center;
+  padding: 50px 0 0 100px;
+
+  .model {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: bold;
+      font-size: 30px;
+
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          background-color: white !important;
+          opacity: .6;
+        }
+      }
+    }
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  ul {
+    buttons {
+      line-height: 100px;
+
+      a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        padding: 5px;
+        &:hover {
+          background-color: white !important;
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
+
+
+.sneakerShow {
+	padding-top: 10vh;
+	padding-left: 30vw;
+	font-family: 'Helvetica neue', sans-serif;
+  width: 70vw;
+  height: 70vh;
+  align-items: center;
+
+  .model {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-weight: bold;
+      font-size: 30px;
+
+      a {
+        text-decoration: none;
+        color: black;
+        &:hover {
+          background-color: white !important;
+          opacity: .6;
+        }
+      }
+    }
+
+    img {
+      width: 500px;
+      height: 500px;
+    }
+  }
+
+  ul {
+		position: absolute;
+		margin-top: 250px;
+    buttons {
+      line-height: 100px;
+
+      a {
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        padding: 5px;
+        &:hover {
+          background-color: white !important;
+          opacity: .6;
+        }
+      }
+    }
+  }
+
+	.button {
+		position: absolute;
+		margin-top: -250px;
+		margin-left: 500px;
+
+		a {
+			text-decoration: none;
+			color: black;
+			border: 1px solid black;
+			padding: 5px;
+			&:hover {
+				background-color: white !important;
+				opacity: .6;
+			}
+		}
+	}
 }

@@ -53,5 +53,17 @@ Sneaker.create([
     sex: 'unisex',
     price: 0,
     image: upload_fake_image
+  }, {
+    brand_id: random_brand_id,
+    model: 'Insta Pump White',
+    sex: 'unisex',
+    price: 0,
+    image: upload_fake_image
+  }, {
+    brand_id: random_brand_id,
+    model: 'Insta Pump White',
+    sex: 'unisex',
+    price: 0,
+    image: upload_fake_image
   }
 ])
