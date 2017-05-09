@@ -1,13 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <section class="brandsShow">
-  <p class="name">
-    <!-- <strong>Name:</strong> -->
-    <%= @brand.name %>
-  </p>
+  <div class="logoname">
+    <p class="name">
+      <!-- <strong>Name:</strong> -->
+      <%= @brand.name %>
+    </p>
 
-  <div class="logo">
-    <%= image_tag @brand.logo %>
+    <div class="logo">
+      <%= image_tag @brand.logo %>
+    </div>
   </div>
 
   <div class="edit">

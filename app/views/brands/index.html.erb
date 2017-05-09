@@ -27,6 +27,7 @@
 <section class="brands">
   <% @brands.each do |brand| %>
     <div class="mainBrands">
+      <logo><%= image_tag brand.logo %></logo>
       <p><%= brand.name %></p>
       <%= link_to '', brand %>
     </div>

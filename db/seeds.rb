@@ -10,17 +10,28 @@ Rake::Task['db:drop'].invoke
 Rake::Task['db:create'].invoke
 Rake::Task['db:migrate'].invoke
 
+def upload_fake_logo
+  uploader = LogoUploader.new(Brand.new, :logo)
+  uploader.cache!(File.open(Dir.glob(File.join(Rails.root, 'lib/tasks/logos', '*')).sample))
+  uploader
+end
+
 Brand.create([
   {
-    name: 'Adidas'
+    name: 'Adidas',
+    logo: upload_fake_logo
   }, {
-    name: 'Nike'
+    name: 'Nike',
+    logo: upload_fake_logo
   }, {
-    name: 'Puma'
+    name: 'Puma',
+    logo: upload_fake_logo
   }, {
-    name: 'Reebok'
+    name: 'Reebok',
+    logo: upload_fake_logo
   }, {
-    name: 'Vans'
+    name: 'Vans',
+    logo: upload_fake_logo
   }
 ])
 
@@ -34,36 +45,25 @@ def upload_fake_image
   uploader
 end
 
-Sneaker.create([
-  {
+
+@sneaker_models = ['NMD R1 Japan Black', 'Sock Dart Peach', 'Insta Pump White', 'Vans Old School Black', 'Alexander McQueen Black']
+
+
+def price
+  rand (2300..22500)
+end
+
+def create_sneaker
+  Sneaker.create(
     brand_id: random_brand_id,
-    model: 'NMD R1 Japan Black',
+    model: @sneaker_models.sample,
     sex: 'unisex',
-    price: 0,
+    price: price,
     image: upload_fake_image
-  }, {
-    brand_id: random_brand_id,
-    model: 'Sock Dart Peach',
-    sex: 'female',
-    price: 0,
-    image: upload_fake_image
-  }, {
-    brand_id: random_brand_id,
-    model: 'Insta Pump White',
-    sex: 'unisex',
-    price: 0,
-    image: upload_fake_image
-  }, {
-    brand_id: random_brand_id,
-    model: 'Insta Pump White',
-    sex: 'unisex',
-    price: 0,
-    image: upload_fake_image
-  }, {
-    brand_id: random_brand_id,
-    model: 'Insta Pump White',
-    sex: 'unisex',
-    price: 0,
-    image: upload_fake_image
-  }
-])
+  )
+end
+
+30.times do
+  create_sneaker
+  puts "Sneaker created"
+end

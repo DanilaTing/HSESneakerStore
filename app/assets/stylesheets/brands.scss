@@ -17,12 +17,23 @@
     justify-content: center;
     align-items: center;
 
+    logo{
+      img {
+        mix-blend-mode: multiply;
+      }
+    }
+
     &:hover {
       background-color: rgba(255, 182, 137, 1);
     }
 
     &:hover p {
       color: white;
+      display: block;
+    }
+
+    &:hover logo {
+      display: none;
     }
 
     p {
@@ -31,7 +42,7 @@
       font-size: 30px;
       line-height: 40px;
       text-align: center;
-      color: black;
+      display: none;
     }
 
     a {
@@ -52,15 +63,29 @@
   font-family: 'Helvetica neue', sans-serif;
   display: block;
 
-  .name {
-    font-weight: bold;
-    font-size: 30px;
+  .logoname {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
     margin: 20px 0 0 100px;
-    position: absolute;
+
+    .name {
+      font-weight: bold;
+      font-size: 30px;
+    }
+
+    .logo {
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
 
   .edit {
-    padding-top: 30px;
+    position: absolute;
+    margin-top: -85px;
     margin-left: 300px;
 
     a{
@@ -77,7 +102,7 @@
 
   .newSneakerInBrand {
     position: absolute;
-    margin-top: -15px;
+    margin-top: -85px;
     margin-left: 90%;
 
     a{
